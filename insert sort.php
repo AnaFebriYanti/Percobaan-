@@ -1,6 +1,6 @@
 <?php
 echo "//insertion sort<br>";
-$data=array(6,5,3,1,8,7,2,4);
+$data=array(9,5,6,7,8,2,1,3,4);
 print_r($data); 
 echo "<br>";
   $n=count($data);
