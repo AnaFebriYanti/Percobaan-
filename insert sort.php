@@ -1,22 +1,38 @@
 <?php
-echo "Insertion Sort";
+echo "//insertion sort<br>";
+$data=array(6,5,3,1,8,7,2,4);
+print_r($data); 
 echo "<br>";
-$data=array(50,40,7,10,9,3,4);
-function insertion_sort($data){
   $n=count($data);
-  for ($i = 1;$i<$n;$i++){ for ($k = $i; $k>0; $k--) {
-      if($data[$k]<$data[$k-1]){
-        $dummy=$data[$k];
-        $data[$k]=$data[$k-1];
-        $data[$k-1]=$dummy;
-      }
-    }
-  }
-  return $data;
-}
-echo "Random Data = ";
-echo implode ($data);
-echo "<br>";
-echo "Sequence Data = ";
-echo implode (insertion_sort($data));
+  echo "jumlah data :".$n."<br>";
+  $start_time = microtime(true);
+
+  for ($i = 1;$i<$n;$i++){
+    echo "<br>";
+    echo "perulangan : ".$i."<br>";  
+    for ($k = $i; $k>0; $k--) {
+          if ($data[$k] < $data[$k-1])
+          { 
+              echo "data ke: ".$k. " : ".$data[$k]." < "."data ke: ".($k-1). " : ".$data[$j-1]." = tukar";
+              $dummy=$data[$k];
+              $data[$k]=$data[$k-1];
+              $data[$k-1]=$dummy;
+              echo "<br>";          
+            }
+            else
+            {
+              echo "data ke: ".$k. " : ".$data[$k]." < "."data ke: ".($k-1). " : ".$data[$j-1]." = tidak tukar"; 
+            }
+      } 
+      print_r($data);
+      echo "<br>";
+    }   
+    
+   // End clock time in seconds
+   $end_time = microtime(true);
+   // Calculate script execution time
+   $execution_time = ($end_time - $start_time);
+     
+   echo " Execution time of script = ".$execution_time." sec";
+
 ?>
